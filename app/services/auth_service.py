@@ -1,5 +1,6 @@
-from app.models.user_model import UserModel
-from app.models.group_model import GroupModel
+from ..models.user_model import UserModel
+from ..models.group_model import GroupModel
+
 
 class AuthService:
     def authenticate_user(self, username, password):

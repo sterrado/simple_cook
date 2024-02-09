@@ -1,9 +1,14 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import create_access_token
-from app.services.auth_service import AuthService
+from ..services.auth_service import AuthService
 
 auth_blueprint = Blueprint('auth', __name__)
 auth_service = AuthService()
+
+
+@auth_blueprint.route('/test', methods=['GET'])
+def test():
+    return jsonify("hello man")
 
 @auth_blueprint.route('/login', methods=['POST'])
 def login():
@@ -24,3 +29,4 @@ def register():
 def register_group():
     # Implement group registration logic for admins
     pass
+
